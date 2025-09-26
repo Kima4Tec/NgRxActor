@@ -81,5 +81,12 @@ export class ActorPageComponent implements OnInit {
     const id = Number(selectElement.value);
     this.selectedActorId = id;
     this.store.dispatch(ActorActions.selectActor({ actorId: id }));
+    // Hent alle actors
+    this.actorService.getActors().subscribe(actors => {console.log(actors)})
+    //Hent alle actors fornavne
+    this.actorService.getActors().subscribe(actors => {
+      const firstNames = actors.map(actor => actor.firstName);
+      console.log(firstNames)
+    })
   }
 }

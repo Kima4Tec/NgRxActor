@@ -24,6 +24,7 @@ import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { Actor } from '../models/actor.model';
 
+//Der bliver gjort klart til 
 @Injectable({ providedIn: 'root' })
 export class ActorService {
   private mockActors: Actor[] = [
@@ -31,9 +32,11 @@ export class ActorService {
     { id: 2, firstName: 'Meryl', lastName: 'Streep', birthDate: '1949-06-22' },
     { id: 3, firstName: 'Leonardo', lastName: 'DiCaprio', birthDate: '1974-11-11' }
   ];
-
+  
   getActors(): Observable<Actor[]> {
     // Simulerer forsinkelse som i et API-kald
-    return of(this.mockActors).pipe(delay(500));
+    return of(this.mockActors).pipe(delay(500)); 
   }
+  
+
 }

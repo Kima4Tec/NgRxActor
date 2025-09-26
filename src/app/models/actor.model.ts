@@ -1,3 +1,4 @@
+// Entities for Actor
 export interface Actor {
   id: number;
   firstName: string;
